@@ -1,0 +1,26 @@
+<launch>
+
+  <arg name="rotCorrX" default="0"/>
+  <arg name="rotCorrY" default="0"/>
+  <arg name="filterDis" default="-1.0"/>
+  <arg name="upward" default="true"/>
+  <arg name="calibration16" default="$(find velodyne_launch)/params/VLP-16.yaml"/>
+  <arg name="calibration32" default="$(find velodyne_launch)/params/HDL-32E.yaml"/>
+  <arg name="pcap" default="" />
+
+  <include file="$(find velodyne_driver)/launch/nodelet_manager.launch">
+    <arg name="pcap" value="$(arg pcap)"/>
+  </include>
+
+  <include file="$(find velodyne_pointcloud)/launch/cloud_nodelet.launch">
+    <arg name="rotCorrX" value="$(arg rotCorrX)"/>
+    <arg name="rotCorrY" value="$(arg rotCorrY)"/>
+    <arg name="filterDis" value="$(arg filterDis)"/>
+    <arg name="upward" value="$(arg upward)"/>
+    <arg name="calibration16" value="$(arg calibration16)"/>
+    <arg name="calibration32" value="$(arg calibration32)"/>
+  </include>
+
+  <!--node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find velodyne_launch)/launch/velodyne.rviz"/-->
+
+</launch>

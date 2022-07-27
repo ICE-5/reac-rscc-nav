@@ -1,0 +1,16 @@
+<launch>
+
+  <node pkg="receive_xsens" type="receive_xsens" name="receive_xsens" output="screen">
+    <param name="imu_port" type="string" value="/dev/ttyUSB0" />
+    <param name="imu_baudrate" type="int" value="115200" />
+    <param name="use_ethernet" type="bool" value="true" />
+    <param name="velodyne_ip" type="string" value="192.168.1.201"/>
+    <param name="velodyne_port" type="int" value="10110" />
+    <param name="nmea_baudrate" type="int" value="9600" />
+    <param name="nmea_port" type="string" value="/dev/ttyUSB1" />
+    <param name="laser_wrt_imu_yaw" type="double" value="0" />
+    <param name="laser_wrt_imu_pitch" type="double" value="0" />
+    <param name="laser_wrt_imu_roll" type="double" value="0" />
+  </node>
+
+</launch>
