@@ -12,7 +12,7 @@ Unzip laser_odometry folder, then in a terminal go to the folder
 
 Launch processing with
 
-  roslaunch loam_velodyne_16 loam_velodyne_16.launch
+  roslaunch ji_loam ji_loam.launch
 
 Registered scans and sensor frame should show in RVIZ
 

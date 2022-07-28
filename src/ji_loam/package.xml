@@ -1,5 +1,5 @@
 <package>
-  <name>loam_velodyne_16</name>
+  <name>ji_loam</name>
   <version>0.0.2</version>
   <description>Laser Odometry and Mapping</description>
   <maintainer email="zhangji@cmu.edu">Ji Zhang</maintainer>

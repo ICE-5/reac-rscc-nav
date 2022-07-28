@@ -5,6 +5,9 @@
 **/devel/
 **/logs/
 **/build/
+data/
+misc/
+
 bin/
 lib/
 msg_gen/
