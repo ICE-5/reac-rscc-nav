@@ -1,8 +1,11 @@
 <launch>
+  <rosparam>
+    use_sim_time: false
+  </rosparam>
 
   <include file="$(find receive_xsens)/receive_xsens.launch" />
 
-  <include file="$(find velodyne_launch)/launch/velodyne.launch" />
+  <!-- <include file="$(find velodyne_launch)/launch/velodyne.launch" /> -->
 
   <node pkg="ji_loam" type="scanRegistration" name="scanRegistration" output="screen">
     <param name="useImuAcceleration" type="bool" value="false" />
@@ -37,6 +40,6 @@
 
   <node pkg="tf" type="static_transform_publisher" name="veloTransPublisher" args="0 0 0 0 0 0 sensor velodyne 1000"/>
 
-  <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find ji_loam)/ji_loam.rviz"/>
+  <!-- <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find ji_loam)/ji_loam.rviz"/> -->
 
 </launch>

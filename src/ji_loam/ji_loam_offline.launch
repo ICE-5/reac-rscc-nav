@@ -3,7 +3,7 @@
     use_sim_time: true
   </rosparam>
 
-  <include file="$(find velodyne_launch)/launch/velodyne.launch" />
+  <!-- <include file="$(find velodyne_launch)/launch/velodyne.launch" /> -->
 
   <node pkg="ji_loam" type="scanRegistration" name="scanRegistration" output="screen">
     <param name="useImuAcceleration" type="bool" value="false" />
