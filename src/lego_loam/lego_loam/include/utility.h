@@ -58,7 +58,7 @@ extern const string pointCloudTopic = "/velodyne_points";
 extern const string imuTopic = "/imu/data";
 
 // Save pcd
-extern const string fileDirectory = "/tmp/";
+extern const string fileDirectory = "/home/administrator/reac_ws/data/loam_converted_map/tmp_";
 
 // Using velodyne cloud "ring" channel for image projection (other lidar may have different name for this channel, change "PointXYZIR" below)
 extern const bool useCloudRing = true; // if true, ang_res_y and ang_bottom are not used
@@ -105,7 +105,7 @@ extern const int groundScanInd = 7;
 // extern const float ang_bottom = 16.6+0.1;
 // extern const int groundScanInd = 15;
 
-extern const bool loopClosureEnableFlag = false;
+extern const bool loopClosureEnableFlag = true;
 extern const double mappingProcessInterval = 0.3;
 
 extern const float scanPeriod = 0.1;
@@ -130,12 +130,19 @@ extern const float nearestFeatureSearchSqDist = 25;
 
 
 // Mapping Params
-extern const float surroundingKeyframeSearchRadius = 50.0; // key frame that is within n meters from current pose will be considerd for scan-to-map optimization (when loop closure disabled)
-extern const int   surroundingKeyframeSearchNum = 50; // submap size (when loop closure enabled)
+// extern const float surroundingKeyframeSearchRadius = 50.0; // key frame that is within n meters from current pose will be considerd for scan-to-map optimization (when loop closure disabled)
+// extern const int   surroundingKeyframeSearchNum = 50; // submap size (when loop closure enabled)
+// history key frames (history submap for loop closure)
+//extern const float historyKeyframeSearchRadius = 7.0; // key frame that is within n meters from current pose will be considerd for loop closure
+// extern const int   historyKeyframeSearchNum = 25; // 2n+1 number of hostory key frames will be fused into a submap for loop closure
+// extern const float historyKeyframeFitnessScore = 0.3; // the smaller the better alignment
+
+extern const float surroundingKeyframeSearchRadius = 100.0; // key frame that is within n meters from current pose will be considerd for scan-to-map optimization (when loop closure disabled)
+extern const int   surroundingKeyframeSearchNum = 100; // submap size (when loop closure enabled)
 // history key frames (history submap for loop closure)
 extern const float historyKeyframeSearchRadius = 7.0; // key frame that is within n meters from current pose will be considerd for loop closure
-extern const int   historyKeyframeSearchNum = 25; // 2n+1 number of hostory key frames will be fused into a submap for loop closure
-extern const float historyKeyframeFitnessScore = 0.3; // the smaller the better alignment
+extern const int   historyKeyframeSearchNum = 51; // 2n+1 number of hostory key frames will be fused into a submap for loop closure
+extern const float historyKeyframeFitnessScore = 0.5; // the smaller the better alignment
 
 extern const float globalMapVisualizationSearchRadius = 500.0; // key frames with in n meters will be visualized
 

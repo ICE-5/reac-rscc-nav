@@ -5,6 +5,8 @@
 **/devel/
 **/logs/
 **/build/
+**/devel_isolated/
+**/build_isolated/
 data/
 misc/
 

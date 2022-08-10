@@ -497,11 +497,11 @@ public:
 
         for (int i = 0; i < cloudSize; i++) {
 
-            point.x = segmentedCloud->points[i].y;
-            point.y = segmentedCloud->points[i].z;
-            point.z = segmentedCloud->points[i].x;
+            point.x = segmentedCloud->points[i].x;
+            point.y = segmentedCloud->points[i].y;
+            point.z = segmentedCloud->points[i].z;
 
-            float ori = -atan2(point.x, point.z);
+            float ori = -atan2(point.y, point.x);
             if (!halfPassed) {
                 if (ori < segInfo.startOrientation - M_PI / 2)
                     ori += 2 * M_PI;
@@ -1748,9 +1748,9 @@ public:
         int cloudSize = outlierCloud->points.size();
         for (int i = 0; i < cloudSize; ++i)
         {
-            point.x = outlierCloud->points[i].y;
-            point.y = outlierCloud->points[i].z;
-            point.z = outlierCloud->points[i].x;
+            point.x = outlierCloud->points[i].x;
+            point.y = outlierCloud->points[i].y;
+            point.z = outlierCloud->points[i].z;
             point.intensity = outlierCloud->points[i].intensity;
             outlierCloud->points[i] = point;
         }
